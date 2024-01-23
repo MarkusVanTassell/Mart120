@@ -1,0 +1,7 @@
+GUI vs CLI
+
+GUI's and CLI's are both ways that the user interacts with their computer. While neither is inherently better than the other, there are definitely some key differences that seperate the two in their uses. 
+The more "powerful" of the two is the CLI, which with the trained user can be used to more efficiently navigate the computer. The command line has viritually all the functions of the computer at the users fingertips,
+which makes it very quick and usful. The downside to this power though, is in the slightly esoteric learning curve that is required to use a CLI to its maximum potential. This is the strength of the GUI, in its ability
+to be simple and accessible to users with no background on computation or computer science. Both interfaces definitely have their place in the wide world of computer technology, and although they are very different, they both 
+have a time and place to shine.
