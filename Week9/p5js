@@ -1,0 +1,23 @@
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background(220);
+  ellipse(200,200,150,190);
+  ellipse(165,180,40,20);
+  ellipse(235,180,40,20);
+  line(125,180,165,145);
+  line(275,180,235,145);
+  line(165,145,235,145);
+  rect(150,155,40,10);
+  rect(210,160,40,10);
+  triangle(180,220,200,170,220,220);
+  point(165,180);
+  point(235,180);
+  triangle(150,235,250,235,200,250);
+  line(185,275,215,275);
+  textSize(32)
+  text('Markus D. VanTassell',75,30);
+  console.log("Markus VanTassell week 9 hw")
+}
