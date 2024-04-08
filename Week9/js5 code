@@ -1,0 +1,141 @@
+//Background color
+var redVal = 80;
+var blueVal = 115;
+var greenVal = 110;
+
+//Head position
+var headx = 200;
+var heady = 200;
+
+//Mouth position
+var mouthx = 210;
+var mouthy = 160;
+
+//Eye position
+var eyex = 165;
+var eyey = 180;
+
+//Eye2 position
+var eye2x = 235;
+var eye2y = 180;
+
+//Brow
+var browx = 150;
+var browy = 155;
+
+//
+//Movement
+var movementhead;
+var movementmouth;
+var movementhchin;
+var movementeye;
+var movementeye2;
+var movementbrowx;
+var movementbrowy;
+
+//textSize variable
+var txtSize =32;
+
+function setup() {
+  //Creates the Canvas
+  createCanvas(400, 400);
+  
+  //Random Movement Speeds
+  movementhead = Math.floor(Math.random() * 10) + 1;
+  movementmouth = Math.floor(Math.random() * 10) + 1;
+  movementhchin = Math.floor(Math.random() * 10) + 1;
+  movementeye = Math.floor(Math.random() * 10) + 1;
+  movementbrowx = Math.floor(Math.random() * 10) + 1;
+  movementbrowy = Math.floor(Math.random() * 10) + 1;
+  movementeye2 = Math.floor(Math.random() * 10) + 1;
+  
+}
+ 
+//Drawing Function, head and text
+function draw() {
+  
+  background(redVal, blueVal, greenVal)
+ 
+  //Head
+   ellipse(headx,heady,150,190);
+  
+  
+  //Eyes and Pupils
+  ellipse(eyex,eyey,40,20);
+  ellipse(eye2x,eye2y,40,20);
+  point(165,180);
+  point(235,180);
+  
+  //Hairline
+  line(125,180,165,145);
+  line(275,180,235,145);
+  line(165,145,235,145);
+ 
+  //Eyebrows
+  rect(browx,browy,40,10);
+  rect(mouthx,mouthy,40,10);
+ 
+  //Nose
+  triangle(180,220,200,170,220,220);
+  
+  //Mouth
+  triangle(150,235,250,235,200,250);
+  
+  //Chin
+  line(185,275,215,275);
+
+  
+  //TextStuff
+  textSize(txtSize)
+  text('Markus D. VanTassell',75,30);
+  console.log("Markus VanTassell week 9 hw")
+  
+  //Headmovement
+    if (headx >= 400 || headx<= 0) {
+    movementhead *= -1;
+  }
+  headx += movementhead;
+  
+  //mouthmovement
+    if (mouthx >= 400 || mouthx<= 0) {
+    movementmouth *= -1;
+  }
+  mouthx += movementmouth;
+  
+  //eye movement
+    if (eyey >= 400 || eyey<= 0) {
+    movementeye *= -1;
+  }
+  eyey += movementeye;
+   
+  //eye2movement
+    if (eye2y >= 400 || eye2y<= 0) {
+    movementeye2 *= -1;
+  }
+  eye2y += movementeye2;
+  
+   //Browmovement x
+    if (browx >= 400 || browx<= 0) {
+    movementbrowx *= -1;
+  }
+  browx += movementbrowy;
+   
+  //Browmovement y
+    if (browy >= 400 || browy<= 0) {
+    movementbrowy *= -1;
+  }
+  browy += movementbrowy;
+  
+  if(txtSize <= 160){
+    txtSize = txtSize + 4;
+  }
+  if(txtSize>=160){
+    txtSize = txtSize - 32;
+  }
+  if(txtSize <=8){
+    txtSize = txtSize - 32
+  }
+}
+
+
+
