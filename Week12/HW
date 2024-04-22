@@ -1,0 +1,157 @@
+    var herox = 50;
+    var heroy = 50;
+    var herodiameter = 25;
+    var boyx = 200
+    var boyy = 200
+    var boyside = 75
+    var girlx = 350
+    var girly = 350
+    var girlheight = 100
+    var girlwidth = 50
+    var mousex=450
+    var mousey = 100
+function setup()
+{
+  createCanvas(400,400)
+  frameRate(10)
+  
+ 
+}
+
+ function draw() 
+    {
+     //Backgrouind
+      background(10,100,100);
+      
+      
+      
+      createHero();
+     heroMovement();
+      
+      //boy
+      fill (400, 100, 0)
+      square(boyx,boyy,boyside)
+      //girl
+    createGirl();
+      
+      //mouse guy
+     
+      circle(mousex, mousey, 58)
+      
+      
+      
+      //exit
+      makeExit();
+      
+      //boymovement
+      if(boyx <= 300)
+        {
+            boyx+=10;
+        }
+        else
+        {
+            boyx = 50;
+        }
+        if(boyy <=300)
+        {
+            boyy+=31
+        }
+        else
+        {
+           boyy = 1;
+        }
+      //girlmovement
+      girlMovement();
+      //exit event
+      youWin();
+    
+    }
+
+     function heroMovement()
+      {
+        function keyPressed() 
+          {
+            if (key == 'd') 
+            {
+              herox += 10
+            } 
+            else  if(key == 'a') 
+            {
+              herox-= 10
+            }
+            if (key == 's') 
+            {
+              heroy += 10
+            } 
+            else  if (key == 'w') 
+            {
+              heroy-= 10
+            }
+          }
+        }
+        
+
+
+    function mouseClicked() 
+    {  
+      mousex = mouseX;
+      mousey = mouseY;
+    
+    }
+
+    function createHero(heroxp,heroyp)
+{
+      //Mr Hero
+       fill(400, 200, 1);
+      circle(herox, heroy, herodiameter);
+  heroxp = herox
+  heroyp = heroy
+}
+    function createGirl(girlxp,girlyp,girlheightp,girlwidthp)
+{
+      fill(400, 0, 400)
+      ellipse(girlx, girly, girlheight, girlwidth)
+  girlxp = girlx
+  girlyp = girly
+  girlheightp = girlheight
+  girlwidthp = girlwidth
+}
+
+function makeExit()
+{
+  fill(300, 300, 10)
+      square(275,275,125)
+      fill(0)
+      text('EXIT',310, 300)
+}
+
+function youWin(heroxp,heroy)
+{
+  if((herox || heroy) >=300)
+  {
+          fill(0)
+          text('CONGRATS YOU WIN', 200, 200)
+}
+}
+
+function girlMovement(girlxp,girlyp)
+{
+  if(girlxp >=0)
+        {
+            girlxp+=-50
+        }
+        else
+        {
+            girlxp = 400;
+        }
+        if(girlyp >=0)
+        {
+            girlyp+=-10
+        }
+        else
+        {
+           girlyp = 30;
+        }
+  girlxp = girlx
+  girlyp = girly
+}
